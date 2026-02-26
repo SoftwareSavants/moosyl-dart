@@ -36,9 +36,7 @@ class _$PaymentRequestCreateAmountSerializer implements PrimitiveSerializer<Paym
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PaymentRequestCreateAmount object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
+    PaymentRequestCreateAmount object) sync* {
   }
 
   @override
