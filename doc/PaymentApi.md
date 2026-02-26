@@ -23,6 +23,10 @@ Retrieve detailed information about a payment by transaction ID. Requires secret
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getPaymentApi();
 final String id = id_example; // String | 
@@ -47,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
@@ -66,6 +70,10 @@ Use this endpoint to create a new payment for an existing payment request.  **Te
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getPaymentApi();
 final PaymentCreate paymentCreate = ; // PaymentCreate | 
@@ -90,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 

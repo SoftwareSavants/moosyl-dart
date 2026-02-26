@@ -22,6 +22,10 @@ Creates a pending payment and returns form data to redirect customer to Masrivi 
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getMasriviApi();
 final PostMasriviInitiateRequest postMasriviInitiateRequest = ; // PostMasriviInitiateRequest | 
@@ -46,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 

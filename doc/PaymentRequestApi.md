@@ -25,6 +25,10 @@ Retrieve a payment request by ID
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getPaymentRequestApi();
 final String id = id_example; // String | 
@@ -49,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
@@ -68,6 +72,10 @@ Retrieve a payment request by transaction ID
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getPaymentRequestApi();
 final String transactionId = transactionId_example; // String | 
@@ -92,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
@@ -111,6 +119,10 @@ Refresh the status of a payment request by transaction ID. Requires secret API k
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getPaymentRequestApi();
 final String transactionId = transactionId_example; // String | 
@@ -135,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
@@ -154,6 +166,10 @@ Create a new payment request that can be used to collect payments. Requires secr
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getPaymentRequestApi();
 final PaymentRequestCreate paymentRequestCreate = ; // PaymentRequestCreate | 
@@ -178,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
