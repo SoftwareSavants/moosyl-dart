@@ -1,5 +1,5 @@
 name: moosyl
-version: 1.0.0
+version: 1.0.1
 description: Moosyl API client for Dart and Flutter
 homepage: https://docs.moosyl.com
 repository: https://github.com/SoftwareSavants/moosyl-dart
