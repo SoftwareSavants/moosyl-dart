@@ -23,6 +23,10 @@ Retrieve all configurations for the current environment
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getConfigurationApi();
 
@@ -43,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
@@ -62,6 +66,10 @@ Retrieve a specific configuration by ID. Requires secret API key.
 ### Example
 ```dart
 import 'package:moosyl/api.dart';
+// TODO Configure API key authorization: ApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('ApiKey').apiKeyPrefix = 'Bearer';
 
 final api = Moosyl().getConfigurationApi();
 final String id = id_example; // String | 
@@ -86,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKey](../README.md#ApiKey)
 
 ### HTTP request headers
 
