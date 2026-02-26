@@ -41,7 +41,7 @@ Future<void> main() async {
     basePathOverride: 'https://api.moosyl.com',
   );
 
-  client.dio.options.headers['Authorization'] = secretKey;
+  client.setApiKey('ApiKey', secretKey);
 
   final paymentRequestApi = client.getPaymentRequestApi();
   final checkoutSessionApi = client.getCheckoutSessionApi();
@@ -143,6 +143,7 @@ Future<String> createPaymentRequestId(Moosyl client) async {
 ## Key Handling
 
 - Use `sk_test_...` keys in development and `sk_live_...` in production.
+- Set your secret key with `client.setApiKey('ApiKey', 'sk_test_...')`.
 - Keep secret keys on backend only.
 - Never ship secret keys in client apps.
 
