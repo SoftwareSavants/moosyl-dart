@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:moosyl/src/model/payment_request_create_amount.dart';
+import 'package:moosyl/src/model/get_products_page_parameter.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -24,7 +24,7 @@ abstract class PaymentRequestCreate implements Built<PaymentRequestCreate, Payme
   String get transactionId;
 
   @BuiltValueField(wireName: r'amount')
-  PaymentRequestCreateAmount get amount;
+  GetProductsPageParameter get amount;
 
   PaymentRequestCreate._();
 
@@ -64,7 +64,7 @@ class _$PaymentRequestCreateSerializer implements PrimitiveSerializer<PaymentReq
     yield r'amount';
     yield serializers.serialize(
       object.amount,
-      specifiedType: const FullType(PaymentRequestCreateAmount),
+      specifiedType: const FullType(GetProductsPageParameter),
     );
   }
 
@@ -107,8 +107,8 @@ class _$PaymentRequestCreateSerializer implements PrimitiveSerializer<PaymentReq
         case r'amount':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PaymentRequestCreateAmount),
-          ) as PaymentRequestCreateAmount;
+            specifiedType: const FullType(GetProductsPageParameter),
+          ) as GetProductsPageParameter;
           result.amount.replace(valueDes);
           break;
         default:
