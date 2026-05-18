@@ -57,7 +57,7 @@ class _$CheckoutSessionPayBodySerializer implements PrimitiveSerializer<Checkout
       yield r'phoneNumber';
       yield serializers.serialize(
         object.phoneNumber,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.passCode != null) {
@@ -100,8 +100,9 @@ class _$CheckoutSessionPayBodySerializer implements PrimitiveSerializer<Checkout
         case r'phoneNumber':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.phoneNumber = valueDes;
           break;
         case r'passCode':
