@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **referenceId** | **String** |  | 
 **metadata** | [**JsonObject**](.md) |  | 
 **payoutId** | **String** |  | 
+**lastSeenAt** | [**DateTime**](DateTime.md) |  | 
+**claimExpiresAt** | [**DateTime**](DateTime.md) |  | 
 **completedAt** | [**DateTime**](DateTime.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 

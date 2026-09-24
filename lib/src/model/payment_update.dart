@@ -86,15 +86,17 @@ class _$PaymentUpdateSerializer implements PrimitiveSerializer<PaymentUpdate> {
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PaymentUpdateStatusEnum),
-          ) as PaymentUpdateStatusEnum;
+            specifiedType: const FullType.nullable(PaymentUpdateStatusEnum),
+          ) as PaymentUpdateStatusEnum?;
+          if (valueDes == null) continue;
           result.status = valueDes;
           break;
         case r'amount':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
           result.amount = valueDes;
           break;
         default:
@@ -125,6 +127,7 @@ class _$PaymentUpdateSerializer implements PrimitiveSerializer<PaymentUpdate> {
     return result.build();
   }
 }
+
 
 class PaymentUpdateStatusEnum extends EnumClass {
 

@@ -37,5 +37,15 @@ void main() {
       // TODO
     });
 
+    // String paymentId
+    test('to test the property `paymentId`', () async {
+      // TODO
+    });
+
+    // JsonObject instructions
+    test('to test the property `instructions`', () async {
+      // TODO
+    });
+
   });
 }

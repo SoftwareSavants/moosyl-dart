@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // CheckoutSessionGetEnvironment environment
+    test('to test the property `environment`', () async {
+      // TODO
+    });
+
     // GetOrganizationById200ResponseData organization
     test('to test the property `organization`', () async {
       // TODO

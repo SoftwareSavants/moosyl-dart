@@ -42,5 +42,10 @@ void main() {
       // TODO
     });
 
+    // String integration
+    test('to test the property `integration`', () async {
+      // TODO
+    });
+
   });
 }

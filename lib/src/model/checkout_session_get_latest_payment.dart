@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,6 +17,9 @@ part 'checkout_session_get_latest_payment.g.dart';
 /// * [status] 
 /// * [referenceId] 
 /// * [paymentCode] 
+/// * [phoneNumber] 
+/// * [claimExpiresAt] 
+/// * [instructions] 
 @BuiltValue()
 abstract class CheckoutSessionGetLatestPayment implements Built<CheckoutSessionGetLatestPayment, CheckoutSessionGetLatestPaymentBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -32,6 +36,15 @@ abstract class CheckoutSessionGetLatestPayment implements Built<CheckoutSessionG
 
   @BuiltValueField(wireName: r'paymentCode')
   String? get paymentCode;
+
+  @BuiltValueField(wireName: r'phoneNumber')
+  String? get phoneNumber;
+
+  @BuiltValueField(wireName: r'claimExpiresAt')
+  String? get claimExpiresAt;
+
+  @BuiltValueField(wireName: r'instructions')
+  JsonObject? get instructions;
 
   CheckoutSessionGetLatestPayment._();
 
@@ -81,6 +94,23 @@ class _$CheckoutSessionGetLatestPaymentSerializer implements PrimitiveSerializer
       yield serializers.serialize(
         object.paymentCode,
         specifiedType: const FullType(String),
+      );
+    }
+    yield r'phoneNumber';
+    yield object.phoneNumber == null ? null : serializers.serialize(
+      object.phoneNumber,
+      specifiedType: const FullType.nullable(String),
+    );
+    yield r'claimExpiresAt';
+    yield object.claimExpiresAt == null ? null : serializers.serialize(
+      object.claimExpiresAt,
+      specifiedType: const FullType.nullable(String),
+    );
+    if (object.instructions != null) {
+      yield r'instructions';
+      yield serializers.serialize(
+        object.instructions,
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
   }
@@ -138,9 +168,34 @@ class _$CheckoutSessionGetLatestPaymentSerializer implements PrimitiveSerializer
         case r'paymentCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.paymentCode = valueDes;
+          break;
+        case r'phoneNumber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.phoneNumber = valueDes;
+          break;
+        case r'claimExpiresAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.claimExpiresAt = valueDes;
+          break;
+        case r'instructions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.instructions = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -170,4 +225,5 @@ class _$CheckoutSessionGetLatestPaymentSerializer implements PrimitiveSerializer
     return result.build();
   }
 }
+
 

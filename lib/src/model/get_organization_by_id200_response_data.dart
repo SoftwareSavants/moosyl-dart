@@ -153,3 +153,4 @@ class _$GetOrganizationById200ResponseDataSerializer implements PrimitiveSeriali
   }
 }
 
+
