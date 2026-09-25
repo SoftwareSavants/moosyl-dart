@@ -18,7 +18,7 @@ Or in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  moosyl: ^1.1.0
+  moosyl: ^1.2.0
 ```
 
 ## Quickstart
@@ -27,8 +27,8 @@ dependencies:
 import 'package:moosyl/moosyl.dart';
 import 'package:one_of/any_of.dart';
 
-PaymentRequestCreateAmount amountAsNumber(num value) {
-  return PaymentRequestCreateAmount(
+GetProductsPageParameter amountAsNumber(num value) {
+  return GetProductsPageParameter(
     (b) => b.anyOf = AnyOf2<String, num>(values: {1: value}),
   );
 }
@@ -115,7 +115,7 @@ Future<String> createPaymentRequestId(Moosyl client) async {
       (b) => b
         ..transactionId = 'order_456'
         ..amount.replace(
-          PaymentRequestCreateAmount(
+          GetProductsPageParameter(
             (a) => a.anyOf = AnyOf2<String, num>(values: {1: 1000}),
           ),
         ),
