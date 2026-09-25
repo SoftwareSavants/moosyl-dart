@@ -36,9 +36,7 @@ class _$PriceUpdateAmountSerializer implements PrimitiveSerializer<PriceUpdateAm
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PriceUpdateAmount object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
+    PriceUpdateAmount object) sync* {
   }
 
   @override

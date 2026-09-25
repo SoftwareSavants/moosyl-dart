@@ -36,9 +36,7 @@ class _$SubscriptionCreateTrialSerializer implements PrimitiveSerializer<Subscri
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    SubscriptionCreateTrial object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
+    SubscriptionCreateTrial object) sync* {
   }
 
   @override

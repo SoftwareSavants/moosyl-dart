@@ -36,9 +36,7 @@ class _$GetProductsPageParameterSerializer implements PrimitiveSerializer<GetPro
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    GetProductsPageParameter object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
+    GetProductsPageParameter object) sync* {
   }
 
   @override
