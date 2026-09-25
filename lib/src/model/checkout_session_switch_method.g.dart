@@ -10,6 +10,8 @@ class _$CheckoutSessionSwitchMethod extends CheckoutSessionSwitchMethod {
   @override
   final CheckoutSessionCreateData data;
   @override
+  final CheckoutSessionGetEnvironment? environment;
+  @override
   final GetOrganizationById200ResponseData organization;
   @override
   final PaymentRequestGetData paymentRequest;
@@ -24,6 +26,7 @@ class _$CheckoutSessionSwitchMethod extends CheckoutSessionSwitchMethod {
 
   _$CheckoutSessionSwitchMethod._(
       {required this.data,
+      this.environment,
       required this.organization,
       required this.paymentRequest,
       required this.configurations,
@@ -43,6 +46,7 @@ class _$CheckoutSessionSwitchMethod extends CheckoutSessionSwitchMethod {
     if (identical(other, this)) return true;
     return other is CheckoutSessionSwitchMethod &&
         data == other.data &&
+        environment == other.environment &&
         organization == other.organization &&
         paymentRequest == other.paymentRequest &&
         configurations == other.configurations &&
@@ -53,6 +57,7 @@ class _$CheckoutSessionSwitchMethod extends CheckoutSessionSwitchMethod {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, environment.hashCode);
     _$hash = $jc(_$hash, organization.hashCode);
     _$hash = $jc(_$hash, paymentRequest.hashCode);
     _$hash = $jc(_$hash, configurations.hashCode);
@@ -65,6 +70,7 @@ class _$CheckoutSessionSwitchMethod extends CheckoutSessionSwitchMethod {
   String toString() {
     return (newBuiltValueToStringHelper(r'CheckoutSessionSwitchMethod')
           ..add('data', data)
+          ..add('environment', environment)
           ..add('organization', organization)
           ..add('paymentRequest', paymentRequest)
           ..add('configurations', configurations)
@@ -83,6 +89,12 @@ class CheckoutSessionSwitchMethodBuilder
   CheckoutSessionCreateDataBuilder get data =>
       _$this._data ??= CheckoutSessionCreateDataBuilder();
   set data(CheckoutSessionCreateDataBuilder? data) => _$this._data = data;
+
+  CheckoutSessionGetEnvironmentBuilder? _environment;
+  CheckoutSessionGetEnvironmentBuilder get environment =>
+      _$this._environment ??= CheckoutSessionGetEnvironmentBuilder();
+  set environment(CheckoutSessionGetEnvironmentBuilder? environment) =>
+      _$this._environment = environment;
 
   GetOrganizationById200ResponseDataBuilder? _organization;
   GetOrganizationById200ResponseDataBuilder get organization =>
@@ -116,6 +128,7 @@ class CheckoutSessionSwitchMethodBuilder
     final $v = _$v;
     if ($v != null) {
       _data = $v.data.toBuilder();
+      _environment = $v.environment?.toBuilder();
       _organization = $v.organization.toBuilder();
       _paymentRequest = $v.paymentRequest.toBuilder();
       _configurations = $v.configurations.toBuilder();
@@ -144,6 +157,7 @@ class CheckoutSessionSwitchMethodBuilder
       _$result = _$v ??
           _$CheckoutSessionSwitchMethod._(
             data: data.build(),
+            environment: _environment?.build(),
             organization: organization.build(),
             paymentRequest: paymentRequest.build(),
             configurations: configurations.build(),
@@ -154,6 +168,8 @@ class CheckoutSessionSwitchMethodBuilder
       try {
         _$failedField = 'data';
         data.build();
+        _$failedField = 'environment';
+        _environment?.build();
         _$failedField = 'organization';
         organization.build();
         _$failedField = 'paymentRequest';

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:moosyl/src/model/gimtel_instructions.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -44,7 +45,7 @@ abstract class PostCheckoutSessionPublicByIdPay200Response implements Built<Post
   String? get paymentId;
 
   @BuiltValueField(wireName: r'instructions')
-  JsonObject? get instructions;
+  GimtelInstructions? get instructions;
 
   PostCheckoutSessionPublicByIdPay200Response._();
 
@@ -120,7 +121,7 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
       yield r'instructions';
       yield serializers.serialize(
         object.instructions,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType(GimtelInstructions),
       );
     }
   }
@@ -204,10 +205,10 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
         case r'instructions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+            specifiedType: const FullType.nullable(GimtelInstructions),
+          ) as GimtelInstructions?;
           if (valueDes == null) continue;
-          result.instructions = valueDes;
+          result.instructions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

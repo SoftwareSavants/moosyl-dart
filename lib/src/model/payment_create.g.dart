@@ -14,7 +14,7 @@ class _$PaymentCreate extends PaymentCreate {
   @override
   final String phoneNumber;
   @override
-  final String passCode;
+  final String? passCode;
 
   factory _$PaymentCreate([void Function(PaymentCreateBuilder)? updates]) =>
       (PaymentCreateBuilder()..update(updates))._build();
@@ -23,7 +23,7 @@ class _$PaymentCreate extends PaymentCreate {
       {required this.configurationId,
       required this.transactionId,
       required this.phoneNumber,
-      required this.passCode})
+      this.passCode})
       : super._();
   @override
   PaymentCreate rebuild(void Function(PaymentCreateBuilder) updates) =>
@@ -124,8 +124,7 @@ class PaymentCreateBuilder
               transactionId, r'PaymentCreate', 'transactionId'),
           phoneNumber: BuiltValueNullFieldError.checkNotNull(
               phoneNumber, r'PaymentCreate', 'phoneNumber'),
-          passCode: BuiltValueNullFieldError.checkNotNull(
-              passCode, r'PaymentCreate', 'passCode'),
+          passCode: passCode,
         );
     replace(_$result);
     return _$result;

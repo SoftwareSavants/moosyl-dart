@@ -59,7 +59,7 @@ class _$SubscriptionCreateTrialSerializer implements PrimitiveSerializer<Subscri
   }) {
     final result = SubscriptionCreateTrialBuilder();
     Object? anyOfDataSrc;
-    final targetType = const FullType(AnyOf, [FullType(bool), FullType(AnyOf1Enum), ]);
+    final targetType = const FullType(AnyOf, [FullType(bool), FullType(String), ]);
     anyOfDataSrc = serialized;
     result.anyOf = serializers.deserialize(anyOfDataSrc, specifiedType: targetType) as AnyOf;
     return result.build();

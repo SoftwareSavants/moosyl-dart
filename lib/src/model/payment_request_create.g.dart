@@ -12,7 +12,7 @@ class _$PaymentRequestCreate extends PaymentRequestCreate {
   @override
   final String transactionId;
   @override
-  final PaymentRequestCreateAmount amount;
+  final GetProductsPageParameter amount;
 
   factory _$PaymentRequestCreate(
           [void Function(PaymentRequestCreateBuilder)? updates]) =>
@@ -72,10 +72,10 @@ class PaymentRequestCreateBuilder
   set transactionId(String? transactionId) =>
       _$this._transactionId = transactionId;
 
-  PaymentRequestCreateAmountBuilder? _amount;
-  PaymentRequestCreateAmountBuilder get amount =>
-      _$this._amount ??= PaymentRequestCreateAmountBuilder();
-  set amount(PaymentRequestCreateAmountBuilder? amount) =>
+  GetProductsPageParameterBuilder? _amount;
+  GetProductsPageParameterBuilder get amount =>
+      _$this._amount ??= GetProductsPageParameterBuilder();
+  set amount(GetProductsPageParameterBuilder? amount) =>
       _$this._amount = amount;
 
   PaymentRequestCreateBuilder() {

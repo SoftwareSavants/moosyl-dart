@@ -35,6 +35,7 @@ doc/GetOrganizationById200Response.md
 doc/GetOrganizationById200ResponseData.md
 doc/GetPaymentByIdStatus200Response.md
 doc/GetProductsPageParameter.md
+doc/GimtelInstructions.md
 doc/InvoiceGet.md
 doc/InvoiceGetData.md
 doc/InvoiceList.md
@@ -137,6 +138,7 @@ lib/src/model/get_organization_by_id200_response.dart
 lib/src/model/get_organization_by_id200_response_data.dart
 lib/src/model/get_payment_by_id_status200_response.dart
 lib/src/model/get_products_page_parameter.dart
+lib/src/model/gimtel_instructions.dart
 lib/src/model/invoice_get.dart
 lib/src/model/invoice_get_data.dart
 lib/src/model/invoice_list.dart
@@ -215,6 +217,7 @@ test/get_organization_by_id200_response_data_test.dart
 test/get_organization_by_id200_response_test.dart
 test/get_payment_by_id_status200_response_test.dart
 test/get_products_page_parameter_test.dart
+test/gimtel_instructions_test.dart
 test/invoice_get_data_test.dart
 test/invoice_get_test.dart
 test/invoice_list_test.dart

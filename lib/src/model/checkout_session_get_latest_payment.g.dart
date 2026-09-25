@@ -18,6 +18,12 @@ class _$CheckoutSessionGetLatestPayment
   final String? referenceId;
   @override
   final String? paymentCode;
+  @override
+  final String? phoneNumber;
+  @override
+  final String? claimExpiresAt;
+  @override
+  final JsonObject? instructions;
 
   factory _$CheckoutSessionGetLatestPayment(
           [void Function(CheckoutSessionGetLatestPaymentBuilder)? updates]) =>
@@ -28,7 +34,10 @@ class _$CheckoutSessionGetLatestPayment
       required this.amount,
       required this.status,
       this.referenceId,
-      this.paymentCode})
+      this.paymentCode,
+      this.phoneNumber,
+      this.claimExpiresAt,
+      this.instructions})
       : super._();
   @override
   CheckoutSessionGetLatestPayment rebuild(
@@ -47,7 +56,10 @@ class _$CheckoutSessionGetLatestPayment
         amount == other.amount &&
         status == other.status &&
         referenceId == other.referenceId &&
-        paymentCode == other.paymentCode;
+        paymentCode == other.paymentCode &&
+        phoneNumber == other.phoneNumber &&
+        claimExpiresAt == other.claimExpiresAt &&
+        instructions == other.instructions;
   }
 
   @override
@@ -58,6 +70,9 @@ class _$CheckoutSessionGetLatestPayment
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, paymentCode.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, claimExpiresAt.hashCode);
+    _$hash = $jc(_$hash, instructions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -69,7 +84,10 @@ class _$CheckoutSessionGetLatestPayment
           ..add('amount', amount)
           ..add('status', status)
           ..add('referenceId', referenceId)
-          ..add('paymentCode', paymentCode))
+          ..add('paymentCode', paymentCode)
+          ..add('phoneNumber', phoneNumber)
+          ..add('claimExpiresAt', claimExpiresAt)
+          ..add('instructions', instructions))
         .toString();
   }
 }
@@ -100,6 +118,20 @@ class CheckoutSessionGetLatestPaymentBuilder
   String? get paymentCode => _$this._paymentCode;
   set paymentCode(String? paymentCode) => _$this._paymentCode = paymentCode;
 
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  String? _claimExpiresAt;
+  String? get claimExpiresAt => _$this._claimExpiresAt;
+  set claimExpiresAt(String? claimExpiresAt) =>
+      _$this._claimExpiresAt = claimExpiresAt;
+
+  JsonObject? _instructions;
+  JsonObject? get instructions => _$this._instructions;
+  set instructions(JsonObject? instructions) =>
+      _$this._instructions = instructions;
+
   CheckoutSessionGetLatestPaymentBuilder() {
     CheckoutSessionGetLatestPayment._defaults(this);
   }
@@ -112,6 +144,9 @@ class CheckoutSessionGetLatestPaymentBuilder
       _status = $v.status;
       _referenceId = $v.referenceId;
       _paymentCode = $v.paymentCode;
+      _phoneNumber = $v.phoneNumber;
+      _claimExpiresAt = $v.claimExpiresAt;
+      _instructions = $v.instructions;
       _$v = null;
     }
     return this;
@@ -141,6 +176,9 @@ class CheckoutSessionGetLatestPaymentBuilder
               status, r'CheckoutSessionGetLatestPayment', 'status'),
           referenceId: referenceId,
           paymentCode: paymentCode,
+          phoneNumber: phoneNumber,
+          claimExpiresAt: claimExpiresAt,
+          instructions: instructions,
         );
     replace(_$result);
     return _$result;

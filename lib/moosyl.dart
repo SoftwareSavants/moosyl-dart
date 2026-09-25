@@ -52,6 +52,7 @@ export 'package:moosyl/src/model/get_organization_by_id200_response.dart';
 export 'package:moosyl/src/model/get_organization_by_id200_response_data.dart';
 export 'package:moosyl/src/model/get_payment_by_id_status200_response.dart';
 export 'package:moosyl/src/model/get_products_page_parameter.dart';
+export 'package:moosyl/src/model/gimtel_instructions.dart';
 export 'package:moosyl/src/model/invoice_get.dart';
 export 'package:moosyl/src/model/invoice_get_data.dart';
 export 'package:moosyl/src/model/invoice_list.dart';

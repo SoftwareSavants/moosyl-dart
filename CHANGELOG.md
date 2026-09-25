@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Gimtel: configuration integration, typed payment instructions, payment status and sandbox simulate-transfer endpoints; passCode optional.
+
 ## 1.1.2
 
 <!--

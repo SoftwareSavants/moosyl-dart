@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // JsonObject instructions
+    // GimtelInstructions instructions
     test('to test the property `instructions`', () async {
       // TODO
     });

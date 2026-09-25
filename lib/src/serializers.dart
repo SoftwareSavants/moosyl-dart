@@ -42,6 +42,7 @@ import 'package:moosyl/src/model/get_organization_by_id200_response.dart';
 import 'package:moosyl/src/model/get_organization_by_id200_response_data.dart';
 import 'package:moosyl/src/model/get_payment_by_id_status200_response.dart';
 import 'package:moosyl/src/model/get_products_page_parameter.dart';
+import 'package:moosyl/src/model/gimtel_instructions.dart';
 import 'package:moosyl/src/model/invoice_get.dart';
 import 'package:moosyl/src/model/invoice_get_data.dart';
 import 'package:moosyl/src/model/invoice_list.dart';
@@ -117,6 +118,7 @@ part 'serializers.g.dart';
   GetOrganizationById200ResponseData,
   GetPaymentByIdStatus200Response,
   GetProductsPageParameter,
+  GimtelInstructions,
   InvoiceGet,
   InvoiceGetData,
   InvoiceList,

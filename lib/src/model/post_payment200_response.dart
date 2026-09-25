@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:moosyl/src/model/gimtel_instructions.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -32,7 +33,7 @@ abstract class PostPayment200Response implements Built<PostPayment200Response, P
   JsonObject? get metadata;
 
   @BuiltValueField(wireName: r'instructions')
-  JsonObject? get instructions;
+  GimtelInstructions? get instructions;
 
   PostPayment200Response._();
 
@@ -83,7 +84,7 @@ class _$PostPayment200ResponseSerializer implements PrimitiveSerializer<PostPaym
       yield r'instructions';
       yield serializers.serialize(
         object.instructions,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType(GimtelInstructions),
       );
     }
   }
@@ -142,10 +143,10 @@ class _$PostPayment200ResponseSerializer implements PrimitiveSerializer<PostPaym
         case r'instructions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+            specifiedType: const FullType.nullable(GimtelInstructions),
+          ) as GimtelInstructions?;
           if (valueDes == null) continue;
-          result.instructions = valueDes;
+          result.instructions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

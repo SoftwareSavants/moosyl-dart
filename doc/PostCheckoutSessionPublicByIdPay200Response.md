@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **provider** | **String** |  | [optional] 
 **formData** | [**JsonObject**](.md) |  | [optional] 
 **paymentId** | **String** |  | [optional] 
-**instructions** | [**JsonObject**](.md) |  | [optional] 
+**instructions** | [**GimtelInstructions**](GimtelInstructions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
