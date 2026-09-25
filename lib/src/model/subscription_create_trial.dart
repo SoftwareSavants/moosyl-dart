@@ -59,6 +59,8 @@ class _$SubscriptionCreateTrialSerializer implements PrimitiveSerializer<Subscri
   }) {
     final result = SubscriptionCreateTrialBuilder();
     Object? anyOfDataSrc;
+    // MANUAL FIX: dart-dio 7.25.0 emits undefined AnyOf1Enum for anyOf[boolean, enum["trialing"]]
+    // (spec: SubscriptionCreate.trial). Re-apply after regeneration until fixed upstream.
     final targetType = const FullType(AnyOf, [FullType(bool), FullType(String), ]);
     anyOfDataSrc = serialized;
     result.anyOf = serializers.deserialize(anyOfDataSrc, specifiedType: targetType) as AnyOf;
