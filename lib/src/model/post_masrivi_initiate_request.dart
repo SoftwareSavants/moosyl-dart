@@ -138,29 +138,33 @@ class _$PostMasriviInitiateRequestSerializer implements PrimitiveSerializer<Post
         case r'phoneNumber':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.phoneNumber = valueDes;
           break;
         case r'acceptUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.acceptUrl = valueDes;
           break;
         case r'declineUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.declineUrl = valueDes;
           break;
         case r'cancelUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.cancelUrl = valueDes;
           break;
         default:
@@ -191,4 +195,5 @@ class _$PostMasriviInitiateRequestSerializer implements PrimitiveSerializer<Post
     return result.build();
   }
 }
+
 

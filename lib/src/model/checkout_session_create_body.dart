@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:moosyl/src/model/payment_request_create_amount.dart';
+import 'package:moosyl/src/model/get_products_page_parameter.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -28,7 +28,7 @@ abstract class CheckoutSessionCreateBody implements Built<CheckoutSessionCreateB
   String? get transactionId;
 
   @BuiltValueField(wireName: r'amount')
-  PaymentRequestCreateAmount? get amount;
+  GetProductsPageParameter? get amount;
 
   @BuiltValueField(wireName: r'phoneNumber')
   String? get phoneNumber;
@@ -83,7 +83,7 @@ class _$CheckoutSessionCreateBodySerializer implements PrimitiveSerializer<Check
       yield r'amount';
       yield serializers.serialize(
         object.amount,
-        specifiedType: const FullType(PaymentRequestCreateAmount),
+        specifiedType: const FullType(GetProductsPageParameter),
       );
     }
     if (object.phoneNumber != null) {
@@ -140,50 +140,57 @@ class _$CheckoutSessionCreateBodySerializer implements PrimitiveSerializer<Check
         case r'paymentRequestId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.paymentRequestId = valueDes;
           break;
         case r'transactionId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.transactionId = valueDes;
           break;
         case r'amount':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(PaymentRequestCreateAmount),
-          ) as PaymentRequestCreateAmount;
+            specifiedType: const FullType.nullable(GetProductsPageParameter),
+          ) as GetProductsPageParameter?;
+          if (valueDes == null) continue;
           result.amount.replace(valueDes);
           break;
         case r'phoneNumber':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.phoneNumber = valueDes;
           break;
         case r'successUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.successUrl = valueDes;
           break;
         case r'cancelUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.cancelUrl = valueDes;
           break;
         case r'expiresInMinutes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType.nullable(num),
+          ) as num?;
+          if (valueDes == null) continue;
           result.expiresInMinutes = valueDes;
           break;
         default:
@@ -214,4 +221,5 @@ class _$CheckoutSessionCreateBodySerializer implements PrimitiveSerializer<Check
     return result.build();
   }
 }
+
 

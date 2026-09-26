@@ -27,7 +27,7 @@ abstract class PaymentCreate implements Built<PaymentCreate, PaymentCreateBuilde
   String get phoneNumber;
 
   @BuiltValueField(wireName: r'passCode')
-  String get passCode;
+  String? get passCode;
 
   PaymentCreate._();
 
@@ -67,11 +67,13 @@ class _$PaymentCreateSerializer implements PrimitiveSerializer<PaymentCreate> {
       object.phoneNumber,
       specifiedType: const FullType(String),
     );
-    yield r'passCode';
-    yield serializers.serialize(
-      object.passCode,
-      specifiedType: const FullType(String),
-    );
+    if (object.passCode != null) {
+      yield r'passCode';
+      yield serializers.serialize(
+        object.passCode,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -119,8 +121,9 @@ class _$PaymentCreateSerializer implements PrimitiveSerializer<PaymentCreate> {
         case r'passCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.passCode = valueDes;
           break;
         default:
@@ -151,4 +154,5 @@ class _$PaymentCreateSerializer implements PrimitiveSerializer<PaymentCreate> {
     return result.build();
   }
 }
+
 

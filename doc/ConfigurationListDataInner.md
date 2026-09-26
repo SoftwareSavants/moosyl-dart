@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **organizationId** | **String** |  | 
 **config** | [**JsonObject**](.md) |  | 
 **isTestingMode** | **bool** |  | 
+**integration** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,6 +24,8 @@ part 'payment_get_data.g.dart';
 /// * [referenceId] 
 /// * [metadata] 
 /// * [payoutId] 
+/// * [lastSeenAt] 
+/// * [claimExpiresAt] 
 /// * [completedAt] 
 /// * [createdAt] 
 /// * [updatedAt] 
@@ -62,6 +64,12 @@ abstract class PaymentGetData implements Built<PaymentGetData, PaymentGetDataBui
 
   @BuiltValueField(wireName: r'payoutId')
   String? get payoutId;
+
+  @BuiltValueField(wireName: r'lastSeenAt')
+  DateTime? get lastSeenAt;
+
+  @BuiltValueField(wireName: r'claimExpiresAt')
+  DateTime? get claimExpiresAt;
 
   @BuiltValueField(wireName: r'completedAt')
   DateTime? get completedAt;
@@ -149,6 +157,16 @@ class _$PaymentGetDataSerializer implements PrimitiveSerializer<PaymentGetData> 
     yield object.payoutId == null ? null : serializers.serialize(
       object.payoutId,
       specifiedType: const FullType.nullable(String),
+    );
+    yield r'lastSeenAt';
+    yield object.lastSeenAt == null ? null : serializers.serialize(
+      object.lastSeenAt,
+      specifiedType: const FullType.nullable(DateTime),
+    );
+    yield r'claimExpiresAt';
+    yield object.claimExpiresAt == null ? null : serializers.serialize(
+      object.claimExpiresAt,
+      specifiedType: const FullType.nullable(DateTime),
     );
     yield r'completedAt';
     yield object.completedAt == null ? null : serializers.serialize(
@@ -270,6 +288,22 @@ class _$PaymentGetDataSerializer implements PrimitiveSerializer<PaymentGetData> 
           if (valueDes == null) continue;
           result.payoutId = valueDes;
           break;
+        case r'lastSeenAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.lastSeenAt = valueDes;
+          break;
+        case r'claimExpiresAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
+          if (valueDes == null) continue;
+          result.claimExpiresAt = valueDes;
+          break;
         case r'completedAt':
           final valueDes = serializers.deserialize(
             value,
@@ -320,6 +354,7 @@ class _$PaymentGetDataSerializer implements PrimitiveSerializer<PaymentGetData> 
     return result.build();
   }
 }
+
 
 class PaymentGetDataStatusEnum extends EnumClass {
 

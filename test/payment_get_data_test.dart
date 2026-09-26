@@ -62,6 +62,16 @@ void main() {
       // TODO
     });
 
+    // DateTime lastSeenAt
+    test('to test the property `lastSeenAt`', () async {
+      // TODO
+    });
+
+    // DateTime claimExpiresAt
+    test('to test the property `claimExpiresAt`', () async {
+      // TODO
+    });
+
     // DateTime completedAt
     test('to test the property `completedAt`', () async {
       // TODO
