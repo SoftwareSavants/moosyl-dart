@@ -105,3 +105,4 @@ class _$GetOrganizationById200ResponseSerializer implements PrimitiveSerializer<
   }
 }
 
+

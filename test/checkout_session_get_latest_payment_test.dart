@@ -32,5 +32,20 @@ void main() {
       // TODO
     });
 
+    // String phoneNumber
+    test('to test the property `phoneNumber`', () async {
+      // TODO
+    });
+
+    // String claimExpiresAt
+    test('to test the property `claimExpiresAt`', () async {
+      // TODO
+    });
+
+    // JsonObject instructions
+    test('to test the property `instructions`', () async {
+      // TODO
+    });
+
   });
 }

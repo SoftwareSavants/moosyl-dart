@@ -17,6 +17,7 @@ part 'configuration_list_data_inner.g.dart';
 /// * [organizationId] 
 /// * [config] 
 /// * [isTestingMode] 
+/// * [integration] 
 @BuiltValue()
 abstract class ConfigurationListDataInner implements Built<ConfigurationListDataInner, ConfigurationListDataInnerBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -33,6 +34,9 @@ abstract class ConfigurationListDataInner implements Built<ConfigurationListData
 
   @BuiltValueField(wireName: r'isTestingMode')
   bool get isTestingMode;
+
+  @BuiltValueField(wireName: r'integration')
+  String get integration;
 
   ConfigurationListDataInner._();
 
@@ -81,6 +85,11 @@ class _$ConfigurationListDataInnerSerializer implements PrimitiveSerializer<Conf
     yield serializers.serialize(
       object.isTestingMode,
       specifiedType: const FullType(bool),
+    );
+    yield r'integration';
+    yield serializers.serialize(
+      object.integration,
+      specifiedType: const FullType(String),
     );
   }
 
@@ -142,6 +151,13 @@ class _$ConfigurationListDataInnerSerializer implements PrimitiveSerializer<Conf
           ) as bool;
           result.isTestingMode = valueDes;
           break;
+        case r'integration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.integration = valueDes;
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -170,4 +186,5 @@ class _$ConfigurationListDataInnerSerializer implements PrimitiveSerializer<Conf
     return result.build();
   }
 }
+
 

@@ -104,3 +104,4 @@ class _$CheckoutSessionSelectMethodBodySerializer implements PrimitiveSerializer
   }
 }
 
+

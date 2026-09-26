@@ -19,6 +19,7 @@ part 'configuration_get_data.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 /// * [isTestingMode] 
+/// * [integration] 
 @BuiltValue()
 abstract class ConfigurationGetData implements Built<ConfigurationGetData, ConfigurationGetDataBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -41,6 +42,9 @@ abstract class ConfigurationGetData implements Built<ConfigurationGetData, Confi
 
   @BuiltValueField(wireName: r'isTestingMode')
   bool get isTestingMode;
+
+  @BuiltValueField(wireName: r'integration')
+  String get integration;
 
   ConfigurationGetData._();
 
@@ -99,6 +103,11 @@ class _$ConfigurationGetDataSerializer implements PrimitiveSerializer<Configurat
     yield serializers.serialize(
       object.isTestingMode,
       specifiedType: const FullType(bool),
+    );
+    yield r'integration';
+    yield serializers.serialize(
+      object.integration,
+      specifiedType: const FullType(String),
     );
   }
 
@@ -174,6 +183,13 @@ class _$ConfigurationGetDataSerializer implements PrimitiveSerializer<Configurat
           ) as bool;
           result.isTestingMode = valueDes;
           break;
+        case r'integration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.integration = valueDes;
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -202,4 +218,5 @@ class _$ConfigurationGetDataSerializer implements PrimitiveSerializer<Configurat
     return result.build();
   }
 }
+
 

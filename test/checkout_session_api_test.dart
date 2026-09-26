@@ -16,6 +16,15 @@ void main() {
       // TODO
     });
 
+    // Poll a Gimtel checkout payment
+    //
+    // Heartbeat for the hosted checkout: keeps the payment claimable while the payer is on the page and returns its status.
+    //
+    //Future<GetCheckoutSessionPublicByIdPaymentStatus200Response> getCheckoutSessionPublicByIdPaymentStatus(String id, String paymentId) async
+    test('test getCheckoutSessionPublicByIdPaymentStatus', () async {
+      // TODO
+    });
+
     // Create checkout session
     //
     // Create a hosted checkout session from paymentRequestId, or from transactionId (optionally creating the payment request when amount is provided).
@@ -31,6 +40,15 @@ void main() {
     //
     //Future<PostCheckoutSessionPublicByIdPay200Response> postCheckoutSessionPublicByIdPay(String id, CheckoutSessionPayBody checkoutSessionPayBody) async
     test('test postCheckoutSessionPublicByIdPay', () async {
+      // TODO
+    });
+
+    // Simulate a Gimtel transfer (sandbox)
+    //
+    // Sandbox only. Completes the pending Gimtel payment as if the payer had transferred the exact amount.
+    //
+    //Future<GetCheckoutSessionPublicByIdPaymentStatus200Response> postCheckoutSessionPublicByIdSimulateTransfer(String id, PostCheckoutSessionPublicByIdSimulateTransferRequest postCheckoutSessionPublicByIdSimulateTransferRequest) async
+    test('test postCheckoutSessionPublicByIdSimulateTransfer', () async {
       // TODO
     });
 

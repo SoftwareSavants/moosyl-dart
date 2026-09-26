@@ -126,8 +126,9 @@ class _$ConfigurationCreateDataSerializer implements PrimitiveSerializer<Configu
         case r'isTestingMode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
           result.isTestingMode = valueDes;
           break;
         default:
@@ -158,4 +159,5 @@ class _$ConfigurationCreateDataSerializer implements PrimitiveSerializer<Configu
     return result.build();
   }
 }
+
 

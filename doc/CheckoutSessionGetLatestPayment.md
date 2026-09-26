@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **status** | **String** |  | 
 **referenceId** | **String** |  | 
 **paymentCode** | **String** |  | [optional] 
+**phoneNumber** | **String** |  | 
+**claimExpiresAt** | **String** |  | 
+**instructions** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

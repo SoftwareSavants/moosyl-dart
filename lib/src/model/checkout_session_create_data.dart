@@ -270,6 +270,7 @@ class _$CheckoutSessionCreateDataSerializer implements PrimitiveSerializer<Check
   }
 }
 
+
 class CheckoutSessionCreateDataStatusEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'open')

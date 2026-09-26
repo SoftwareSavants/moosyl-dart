@@ -6,6 +6,7 @@
 import 'package:moosyl/src/model/get_organization_by_id200_response_data.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:moosyl/src/model/checkout_session_create_data.dart';
+import 'package:moosyl/src/model/checkout_session_get_environment.dart';
 import 'package:moosyl/src/model/configuration_list_data_inner.dart';
 import 'package:moosyl/src/model/payment_request_get_data.dart';
 import 'package:moosyl/src/model/checkout_session_get_latest_payment.dart';
@@ -18,6 +19,7 @@ part 'checkout_session_get.g.dart';
 ///
 /// Properties:
 /// * [data] 
+/// * [environment] 
 /// * [organization] 
 /// * [paymentRequest] 
 /// * [configurations] 
@@ -26,6 +28,9 @@ part 'checkout_session_get.g.dart';
 abstract class CheckoutSessionGet implements Built<CheckoutSessionGet, CheckoutSessionGetBuilder> {
   @BuiltValueField(wireName: r'data')
   CheckoutSessionCreateData get data;
+
+  @BuiltValueField(wireName: r'environment')
+  CheckoutSessionGetEnvironment? get environment;
 
   @BuiltValueField(wireName: r'organization')
   GetOrganizationById200ResponseData get organization;
@@ -67,6 +72,13 @@ class _$CheckoutSessionGetSerializer implements PrimitiveSerializer<CheckoutSess
       object.data,
       specifiedType: const FullType(CheckoutSessionCreateData),
     );
+    if (object.environment != null) {
+      yield r'environment';
+      yield serializers.serialize(
+        object.environment,
+        specifiedType: const FullType(CheckoutSessionGetEnvironment),
+      );
+    }
     yield r'organization';
     yield serializers.serialize(
       object.organization,
@@ -119,6 +131,14 @@ class _$CheckoutSessionGetSerializer implements PrimitiveSerializer<CheckoutSess
           ) as CheckoutSessionCreateData;
           result.data.replace(valueDes);
           break;
+        case r'environment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(CheckoutSessionGetEnvironment),
+          ) as CheckoutSessionGetEnvironment?;
+          if (valueDes == null) continue;
+          result.environment.replace(valueDes);
+          break;
         case r'organization':
           final valueDes = serializers.deserialize(
             value,
@@ -143,8 +163,9 @@ class _$CheckoutSessionGetSerializer implements PrimitiveSerializer<CheckoutSess
         case r'latestPayment':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(CheckoutSessionGetLatestPayment),
-          ) as CheckoutSessionGetLatestPayment;
+            specifiedType: const FullType.nullable(CheckoutSessionGetLatestPayment),
+          ) as CheckoutSessionGetLatestPayment?;
+          if (valueDes == null) continue;
           result.latestPayment.replace(valueDes);
           break;
         default:
@@ -175,4 +196,5 @@ class _$CheckoutSessionGetSerializer implements PrimitiveSerializer<CheckoutSess
     return result.build();
   }
 }
+
 
