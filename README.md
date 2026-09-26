@@ -18,7 +18,7 @@ Or in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  moosyl: ^1.2.0
+  moosyl: ^2.0.0
 ```
 
 ## Quickstart
