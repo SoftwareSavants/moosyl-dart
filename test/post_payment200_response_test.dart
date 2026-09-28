@@ -27,5 +27,10 @@ void main() {
       // TODO
     });
 
+    // GimtelInstructions instructions
+    test('to test the property `instructions`', () async {
+      // TODO
+    });
+
   });
 }

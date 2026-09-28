@@ -15,13 +15,19 @@ class _$PostPayment200Response extends PostPayment200Response {
   final String? referenceId;
   @override
   final JsonObject? metadata;
+  @override
+  final GimtelInstructions? instructions;
 
   factory _$PostPayment200Response(
           [void Function(PostPayment200ResponseBuilder)? updates]) =>
       (PostPayment200ResponseBuilder()..update(updates))._build();
 
   _$PostPayment200Response._(
-      {required this.id, required this.status, this.referenceId, this.metadata})
+      {required this.id,
+      required this.status,
+      this.referenceId,
+      this.metadata,
+      this.instructions})
       : super._();
   @override
   PostPayment200Response rebuild(
@@ -39,7 +45,8 @@ class _$PostPayment200Response extends PostPayment200Response {
         id == other.id &&
         status == other.status &&
         referenceId == other.referenceId &&
-        metadata == other.metadata;
+        metadata == other.metadata &&
+        instructions == other.instructions;
   }
 
   @override
@@ -49,6 +56,7 @@ class _$PostPayment200Response extends PostPayment200Response {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
+    _$hash = $jc(_$hash, instructions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,7 +67,8 @@ class _$PostPayment200Response extends PostPayment200Response {
           ..add('id', id)
           ..add('status', status)
           ..add('referenceId', referenceId)
-          ..add('metadata', metadata))
+          ..add('metadata', metadata)
+          ..add('instructions', instructions))
         .toString();
   }
 }
@@ -84,6 +93,12 @@ class PostPayment200ResponseBuilder
   JsonObject? get metadata => _$this._metadata;
   set metadata(JsonObject? metadata) => _$this._metadata = metadata;
 
+  GimtelInstructionsBuilder? _instructions;
+  GimtelInstructionsBuilder get instructions =>
+      _$this._instructions ??= GimtelInstructionsBuilder();
+  set instructions(GimtelInstructionsBuilder? instructions) =>
+      _$this._instructions = instructions;
+
   PostPayment200ResponseBuilder() {
     PostPayment200Response._defaults(this);
   }
@@ -95,6 +110,7 @@ class PostPayment200ResponseBuilder
       _status = $v.status;
       _referenceId = $v.referenceId;
       _metadata = $v.metadata;
+      _instructions = $v.instructions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -114,15 +130,29 @@ class PostPayment200ResponseBuilder
   PostPayment200Response build() => _build();
 
   _$PostPayment200Response _build() {
-    final _$result = _$v ??
-        _$PostPayment200Response._(
-          id: BuiltValueNullFieldError.checkNotNull(
-              id, r'PostPayment200Response', 'id'),
-          status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PostPayment200Response', 'status'),
-          referenceId: referenceId,
-          metadata: metadata,
-        );
+    _$PostPayment200Response _$result;
+    try {
+      _$result = _$v ??
+          _$PostPayment200Response._(
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'PostPayment200Response', 'id'),
+            status: BuiltValueNullFieldError.checkNotNull(
+                status, r'PostPayment200Response', 'status'),
+            referenceId: referenceId,
+            metadata: metadata,
+            instructions: _instructions?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'instructions';
+        _instructions?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'PostPayment200Response', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

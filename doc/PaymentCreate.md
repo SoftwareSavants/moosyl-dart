@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **configurationId** | **String** |  | 
 **transactionId** | **String** |  | 
 **phoneNumber** | **String** |  | 
-**passCode** | **String** |  | 
+**passCode** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

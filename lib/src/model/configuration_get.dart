@@ -105,3 +105,4 @@ class _$ConfigurationGetSerializer implements PrimitiveSerializer<ConfigurationG
   }
 }
 
+

@@ -18,7 +18,7 @@ Or in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  moosyl: ^1.1.0
+  moosyl: ^2.0.0
 ```
 
 ## Quickstart
@@ -27,8 +27,8 @@ dependencies:
 import 'package:moosyl/moosyl.dart';
 import 'package:one_of/any_of.dart';
 
-PaymentRequestCreateAmount amountAsNumber(num value) {
-  return PaymentRequestCreateAmount(
+GetProductsPageParameter amountAsNumber(num value) {
+  return GetProductsPageParameter(
     (b) => b.anyOf = AnyOf2<String, num>(values: {1: value}),
   );
 }
@@ -115,7 +115,7 @@ Future<String> createPaymentRequestId(Moosyl client) async {
       (b) => b
         ..transactionId = 'order_456'
         ..amount.replace(
-          PaymentRequestCreateAmount(
+          GetProductsPageParameter(
             (a) => a.anyOf = AnyOf2<String, num>(values: {1: 1000}),
           ),
         ),
@@ -154,6 +154,33 @@ Run tests:
 ```bash
 dart test
 ```
+
+### Sandbox smoke test (before a release)
+
+`tool/smoke_gimtel.dart` runs the Gimtel payment flow through this client
+against the real Moosyl API: it creates a payment request (secret key), picks a
+Gimtel method, pays without a passcode, simulates the transfer and polls until
+the payment is `completed`, then checks that a 404 and a 401 surface with the
+backend's message.
+
+```bash
+MOOSYL_SANDBOX_PUBLISHABLE_KEY=... \
+MOOSYL_SANDBOX_SECRET_KEY=... \
+dart run tool/smoke_gimtel.dart
+# optional: MOOSYL_BASE_URL (default https://api.moosyl.com)
+```
+
+- Use the publishable and secret keys of the **sandbox** environment of one
+  organization. The script asks the API which environment the keys belong to
+  and refuses to run (exit 2) for production keys, keys from different
+  organizations, or keys with a `live_` prefix.
+- The organization's sandbox must offer a Gimtel method (Bankily, BCI Pay or
+  Amanty via Gimtel).
+- Without the two variables it prints `SKIPPED` and exits 0.
+- CI: `.github/workflows/smoke.yml` runs it on pull requests and on demand when
+  the repository secrets `MOOSYL_SANDBOX_PUBLISHABLE_KEY` and
+  `MOOSYL_SANDBOX_SECRET_KEY` are set (optional repository variable
+  `MOOSYL_BASE_URL`), and skips otherwise.
 
 ## Contributing
 

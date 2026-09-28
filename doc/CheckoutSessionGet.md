@@ -9,6 +9,7 @@ import 'package:moosyl/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**CheckoutSessionCreateData**](CheckoutSessionCreateData.md) |  | 
+**environment** | [**CheckoutSessionGetEnvironment**](CheckoutSessionGetEnvironment.md) |  | [optional] 
 **organization** | [**GetOrganizationById200ResponseData**](GetOrganizationById200ResponseData.md) |  | 
 **paymentRequest** | [**PaymentRequestGetData**](PaymentRequestGetData.md) |  | 
 **configurations** | [**BuiltList&lt;ConfigurationListDataInner&gt;**](ConfigurationListDataInner.md) |  | 

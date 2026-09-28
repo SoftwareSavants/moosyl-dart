@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:moosyl/src/model/gimtel_instructions.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -16,6 +17,7 @@ part 'post_payment200_response.g.dart';
 /// * [status] 
 /// * [referenceId] 
 /// * [metadata] 
+/// * [instructions] 
 @BuiltValue()
 abstract class PostPayment200Response implements Built<PostPayment200Response, PostPayment200ResponseBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -29,6 +31,9 @@ abstract class PostPayment200Response implements Built<PostPayment200Response, P
 
   @BuiltValueField(wireName: r'metadata')
   JsonObject? get metadata;
+
+  @BuiltValueField(wireName: r'instructions')
+  GimtelInstructions? get instructions;
 
   PostPayment200Response._();
 
@@ -73,6 +78,13 @@ class _$PostPayment200ResponseSerializer implements PrimitiveSerializer<PostPaym
       yield serializers.serialize(
         object.metadata,
         specifiedType: const FullType.nullable(JsonObject),
+      );
+    }
+    if (object.instructions != null) {
+      yield r'instructions';
+      yield serializers.serialize(
+        object.instructions,
+        specifiedType: const FullType(GimtelInstructions),
       );
     }
   }
@@ -128,6 +140,14 @@ class _$PostPayment200ResponseSerializer implements PrimitiveSerializer<PostPaym
           if (valueDes == null) continue;
           result.metadata = valueDes;
           break;
+        case r'instructions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(GimtelInstructions),
+          ) as GimtelInstructions?;
+          if (valueDes == null) continue;
+          result.instructions.replace(valueDes);
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -156,4 +176,5 @@ class _$PostPayment200ResponseSerializer implements PrimitiveSerializer<PostPaym
     return result.build();
   }
 }
+
 

@@ -21,6 +21,8 @@ class _$ConfigurationGetData extends ConfigurationGetData {
   final DateTime updatedAt;
   @override
   final bool isTestingMode;
+  @override
+  final String integration;
 
   factory _$ConfigurationGetData(
           [void Function(ConfigurationGetDataBuilder)? updates]) =>
@@ -33,7 +35,8 @@ class _$ConfigurationGetData extends ConfigurationGetData {
       this.config,
       required this.createdAt,
       required this.updatedAt,
-      required this.isTestingMode})
+      required this.isTestingMode,
+      required this.integration})
       : super._();
   @override
   ConfigurationGetData rebuild(
@@ -54,7 +57,8 @@ class _$ConfigurationGetData extends ConfigurationGetData {
         config == other.config &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
-        isTestingMode == other.isTestingMode;
+        isTestingMode == other.isTestingMode &&
+        integration == other.integration;
   }
 
   @override
@@ -67,6 +71,7 @@ class _$ConfigurationGetData extends ConfigurationGetData {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, isTestingMode.hashCode);
+    _$hash = $jc(_$hash, integration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -80,7 +85,8 @@ class _$ConfigurationGetData extends ConfigurationGetData {
           ..add('config', config)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
-          ..add('isTestingMode', isTestingMode))
+          ..add('isTestingMode', isTestingMode)
+          ..add('integration', integration))
         .toString();
   }
 }
@@ -119,6 +125,10 @@ class ConfigurationGetDataBuilder
   set isTestingMode(bool? isTestingMode) =>
       _$this._isTestingMode = isTestingMode;
 
+  String? _integration;
+  String? get integration => _$this._integration;
+  set integration(String? integration) => _$this._integration = integration;
+
   ConfigurationGetDataBuilder() {
     ConfigurationGetData._defaults(this);
   }
@@ -133,6 +143,7 @@ class ConfigurationGetDataBuilder
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _isTestingMode = $v.isTestingMode;
+      _integration = $v.integration;
       _$v = null;
     }
     return this;
@@ -166,6 +177,8 @@ class ConfigurationGetDataBuilder
               updatedAt, r'ConfigurationGetData', 'updatedAt'),
           isTestingMode: BuiltValueNullFieldError.checkNotNull(
               isTestingMode, r'ConfigurationGetData', 'isTestingMode'),
+          integration: BuiltValueNullFieldError.checkNotNull(
+              integration, r'ConfigurationGetData', 'integration'),
         );
     replace(_$result);
     return _$result;

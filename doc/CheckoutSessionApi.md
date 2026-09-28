@@ -10,8 +10,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCheckoutSessionPublicById**](CheckoutSessionApi.md#getcheckoutsessionpublicbyid) | **GET** /checkout-session/public/{id} | Get public checkout session
+[**getCheckoutSessionPublicByIdPaymentStatus**](CheckoutSessionApi.md#getcheckoutsessionpublicbyidpaymentstatus) | **GET** /checkout-session/public/{id}/payment-status | Poll a Gimtel checkout payment
 [**postCheckoutSession**](CheckoutSessionApi.md#postcheckoutsession) | **POST** /checkout-session | Create checkout session
 [**postCheckoutSessionPublicByIdPay**](CheckoutSessionApi.md#postcheckoutsessionpublicbyidpay) | **POST** /checkout-session/public/{id}/pay | Pay public checkout session
+[**postCheckoutSessionPublicByIdSimulateTransfer**](CheckoutSessionApi.md#postcheckoutsessionpublicbyidsimulatetransfer) | **POST** /checkout-session/public/{id}/simulate-transfer | Simulate a Gimtel transfer (sandbox)
 [**postCheckoutSessionPublicByIdSwitchMethod**](CheckoutSessionApi.md#postcheckoutsessionpublicbyidswitchmethod) | **POST** /checkout-session/public/{id}/switch-method | Switch public checkout method
 
 
@@ -46,6 +48,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CheckoutSessionGet**](CheckoutSessionGet.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCheckoutSessionPublicByIdPaymentStatus**
+> GetCheckoutSessionPublicByIdPaymentStatus200Response getCheckoutSessionPublicByIdPaymentStatus(id, paymentId)
+
+Poll a Gimtel checkout payment
+
+Heartbeat for the hosted checkout: keeps the payment claimable while the payer is on the page and returns its status.
+
+### Example
+```dart
+import 'package:moosyl/api.dart';
+
+final api = Moosyl().getCheckoutSessionApi();
+final String id = id_example; // String | 
+final String paymentId = paymentId_example; // String | 
+
+try {
+    final response = api.getCheckoutSessionPublicByIdPaymentStatus(id, paymentId);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CheckoutSessionApi->getCheckoutSessionPublicByIdPaymentStatus: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **paymentId** | **String**|  | 
+
+### Return type
+
+[**GetCheckoutSessionPublicByIdPaymentStatus200Response**](GetCheckoutSessionPublicByIdPaymentStatus200Response.md)
 
 ### Authorization
 
@@ -138,6 +185,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PostCheckoutSessionPublicByIdPay200Response**](PostCheckoutSessionPublicByIdPay200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **postCheckoutSessionPublicByIdSimulateTransfer**
+> GetCheckoutSessionPublicByIdPaymentStatus200Response postCheckoutSessionPublicByIdSimulateTransfer(id, postCheckoutSessionPublicByIdSimulateTransferRequest)
+
+Simulate a Gimtel transfer (sandbox)
+
+Sandbox only. Completes the pending Gimtel payment as if the payer had transferred the exact amount.
+
+### Example
+```dart
+import 'package:moosyl/api.dart';
+
+final api = Moosyl().getCheckoutSessionApi();
+final String id = id_example; // String | 
+final PostCheckoutSessionPublicByIdSimulateTransferRequest postCheckoutSessionPublicByIdSimulateTransferRequest = ; // PostCheckoutSessionPublicByIdSimulateTransferRequest | 
+
+try {
+    final response = api.postCheckoutSessionPublicByIdSimulateTransfer(id, postCheckoutSessionPublicByIdSimulateTransferRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling CheckoutSessionApi->postCheckoutSessionPublicByIdSimulateTransfer: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **postCheckoutSessionPublicByIdSimulateTransferRequest** | [**PostCheckoutSessionPublicByIdSimulateTransferRequest**](PostCheckoutSessionPublicByIdSimulateTransferRequest.md)|  | 
+
+### Return type
+
+[**GetCheckoutSessionPublicByIdPaymentStatus200Response**](GetCheckoutSessionPublicByIdPaymentStatus200Response.md)
 
 ### Authorization
 

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:moosyl/src/model/gimtel_instructions.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,6 +19,8 @@ part 'post_checkout_session_public_by_id_pay200_response.g.dart';
 /// * [successUrl] 
 /// * [provider] 
 /// * [formData] 
+/// * [paymentId] 
+/// * [instructions] 
 @BuiltValue()
 abstract class PostCheckoutSessionPublicByIdPay200Response implements Built<PostCheckoutSessionPublicByIdPay200Response, PostCheckoutSessionPublicByIdPay200ResponseBuilder> {
   @BuiltValueField(wireName: r'status')
@@ -37,6 +40,12 @@ abstract class PostCheckoutSessionPublicByIdPay200Response implements Built<Post
 
   @BuiltValueField(wireName: r'formData')
   JsonObject? get formData;
+
+  @BuiltValueField(wireName: r'paymentId')
+  String? get paymentId;
+
+  @BuiltValueField(wireName: r'instructions')
+  GimtelInstructions? get instructions;
 
   PostCheckoutSessionPublicByIdPay200Response._();
 
@@ -101,6 +110,20 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
         specifiedType: const FullType.nullable(JsonObject),
       );
     }
+    if (object.paymentId != null) {
+      yield r'paymentId';
+      yield serializers.serialize(
+        object.paymentId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.instructions != null) {
+      yield r'instructions';
+      yield serializers.serialize(
+        object.instructions,
+        specifiedType: const FullType(GimtelInstructions),
+      );
+    }
   }
 
   @override
@@ -142,8 +165,9 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
         case r'paymentCode':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.paymentCode = valueDes;
           break;
         case r'successUrl':
@@ -157,8 +181,9 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
         case r'provider':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.provider = valueDes;
           break;
         case r'formData':
@@ -168,6 +193,22 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.formData = valueDes;
+          break;
+        case r'paymentId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.paymentId = valueDes;
+          break;
+        case r'instructions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(GimtelInstructions),
+          ) as GimtelInstructions?;
+          if (valueDes == null) continue;
+          result.instructions.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -197,4 +238,5 @@ class _$PostCheckoutSessionPublicByIdPay200ResponseSerializer implements Primiti
     return result.build();
   }
 }
+
 

@@ -17,6 +17,8 @@ class _$ConfigurationListDataInner extends ConfigurationListDataInner {
   final JsonObject? config;
   @override
   final bool isTestingMode;
+  @override
+  final String integration;
 
   factory _$ConfigurationListDataInner(
           [void Function(ConfigurationListDataInnerBuilder)? updates]) =>
@@ -27,7 +29,8 @@ class _$ConfigurationListDataInner extends ConfigurationListDataInner {
       required this.type,
       this.organizationId,
       this.config,
-      required this.isTestingMode})
+      required this.isTestingMode,
+      required this.integration})
       : super._();
   @override
   ConfigurationListDataInner rebuild(
@@ -46,7 +49,8 @@ class _$ConfigurationListDataInner extends ConfigurationListDataInner {
         type == other.type &&
         organizationId == other.organizationId &&
         config == other.config &&
-        isTestingMode == other.isTestingMode;
+        isTestingMode == other.isTestingMode &&
+        integration == other.integration;
   }
 
   @override
@@ -57,6 +61,7 @@ class _$ConfigurationListDataInner extends ConfigurationListDataInner {
     _$hash = $jc(_$hash, organizationId.hashCode);
     _$hash = $jc(_$hash, config.hashCode);
     _$hash = $jc(_$hash, isTestingMode.hashCode);
+    _$hash = $jc(_$hash, integration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,7 +73,8 @@ class _$ConfigurationListDataInner extends ConfigurationListDataInner {
           ..add('type', type)
           ..add('organizationId', organizationId)
           ..add('config', config)
-          ..add('isTestingMode', isTestingMode))
+          ..add('isTestingMode', isTestingMode)
+          ..add('integration', integration))
         .toString();
   }
 }
@@ -100,6 +106,10 @@ class ConfigurationListDataInnerBuilder
   set isTestingMode(bool? isTestingMode) =>
       _$this._isTestingMode = isTestingMode;
 
+  String? _integration;
+  String? get integration => _$this._integration;
+  set integration(String? integration) => _$this._integration = integration;
+
   ConfigurationListDataInnerBuilder() {
     ConfigurationListDataInner._defaults(this);
   }
@@ -112,6 +122,7 @@ class ConfigurationListDataInnerBuilder
       _organizationId = $v.organizationId;
       _config = $v.config;
       _isTestingMode = $v.isTestingMode;
+      _integration = $v.integration;
       _$v = null;
     }
     return this;
@@ -141,6 +152,8 @@ class ConfigurationListDataInnerBuilder
           config: config,
           isTestingMode: BuiltValueNullFieldError.checkNotNull(
               isTestingMode, r'ConfigurationListDataInner', 'isTestingMode'),
+          integration: BuiltValueNullFieldError.checkNotNull(
+              integration, r'ConfigurationListDataInner', 'integration'),
         );
     replace(_$result);
     return _$result;

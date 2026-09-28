@@ -1,0 +1,69 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'dart:core';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+import 'package:one_of/any_of.dart';
+
+part 'subscription_create_trial.g.dart';
+
+/// SubscriptionCreateTrial
+@BuiltValue()
+abstract class SubscriptionCreateTrial implements Built<SubscriptionCreateTrial, SubscriptionCreateTrialBuilder> {
+  /// Any Of [String], [bool]
+  AnyOf get anyOf;
+
+  SubscriptionCreateTrial._();
+
+  factory SubscriptionCreateTrial([void updates(SubscriptionCreateTrialBuilder b)]) = _$SubscriptionCreateTrial;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SubscriptionCreateTrialBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<SubscriptionCreateTrial> get serializer => _$SubscriptionCreateTrialSerializer();
+}
+
+class _$SubscriptionCreateTrialSerializer implements PrimitiveSerializer<SubscriptionCreateTrial> {
+  @override
+  final Iterable<Type> types = const [SubscriptionCreateTrial, _$SubscriptionCreateTrial];
+
+  @override
+  final String wireName = r'SubscriptionCreateTrial';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    SubscriptionCreateTrial object) sync* {
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    SubscriptionCreateTrial object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final anyOf = object.anyOf;
+    return serializers.serialize(anyOf, specifiedType: FullType(AnyOf, anyOf.types.map((type) => FullType(type)).toList()))!;
+  }
+
+  @override
+  SubscriptionCreateTrial deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = SubscriptionCreateTrialBuilder();
+    Object? anyOfDataSrc;
+    // MANUAL FIX: dart-dio 7.25.0 emits undefined AnyOf1Enum for anyOf[boolean, enum["trialing"]]
+    // (spec: SubscriptionCreate.trial). Re-apply after regeneration until fixed upstream.
+    final targetType = const FullType(AnyOf, [FullType(bool), FullType(String), ]);
+    anyOfDataSrc = serialized;
+    result.anyOf = serializers.deserialize(anyOfDataSrc, specifiedType: targetType) as AnyOf;
+    return result.build();
+  }
+}
+
+

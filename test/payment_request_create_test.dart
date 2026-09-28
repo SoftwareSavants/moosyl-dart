@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // PaymentRequestCreateAmount amount
+    // GetProductsPageParameter amount
     test('to test the property `amount`', () async {
       // TODO
     });

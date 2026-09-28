@@ -98,6 +98,10 @@ class _$PaymentGetData extends PaymentGetData {
   @override
   final String? payoutId;
   @override
+  final DateTime? lastSeenAt;
+  @override
+  final DateTime? claimExpiresAt;
+  @override
   final DateTime? completedAt;
   @override
   final DateTime createdAt;
@@ -119,6 +123,8 @@ class _$PaymentGetData extends PaymentGetData {
       this.referenceId,
       this.metadata,
       this.payoutId,
+      this.lastSeenAt,
+      this.claimExpiresAt,
       this.completedAt,
       required this.createdAt,
       required this.updatedAt})
@@ -145,6 +151,8 @@ class _$PaymentGetData extends PaymentGetData {
         referenceId == other.referenceId &&
         metadata == other.metadata &&
         payoutId == other.payoutId &&
+        lastSeenAt == other.lastSeenAt &&
+        claimExpiresAt == other.claimExpiresAt &&
         completedAt == other.completedAt &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
@@ -164,6 +172,8 @@ class _$PaymentGetData extends PaymentGetData {
     _$hash = $jc(_$hash, referenceId.hashCode);
     _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jc(_$hash, payoutId.hashCode);
+    _$hash = $jc(_$hash, lastSeenAt.hashCode);
+    _$hash = $jc(_$hash, claimExpiresAt.hashCode);
     _$hash = $jc(_$hash, completedAt.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
@@ -185,6 +195,8 @@ class _$PaymentGetData extends PaymentGetData {
           ..add('referenceId', referenceId)
           ..add('metadata', metadata)
           ..add('payoutId', payoutId)
+          ..add('lastSeenAt', lastSeenAt)
+          ..add('claimExpiresAt', claimExpiresAt)
           ..add('completedAt', completedAt)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
@@ -243,6 +255,15 @@ class PaymentGetDataBuilder
   String? get payoutId => _$this._payoutId;
   set payoutId(String? payoutId) => _$this._payoutId = payoutId;
 
+  DateTime? _lastSeenAt;
+  DateTime? get lastSeenAt => _$this._lastSeenAt;
+  set lastSeenAt(DateTime? lastSeenAt) => _$this._lastSeenAt = lastSeenAt;
+
+  DateTime? _claimExpiresAt;
+  DateTime? get claimExpiresAt => _$this._claimExpiresAt;
+  set claimExpiresAt(DateTime? claimExpiresAt) =>
+      _$this._claimExpiresAt = claimExpiresAt;
+
   DateTime? _completedAt;
   DateTime? get completedAt => _$this._completedAt;
   set completedAt(DateTime? completedAt) => _$this._completedAt = completedAt;
@@ -273,6 +294,8 @@ class PaymentGetDataBuilder
       _referenceId = $v.referenceId;
       _metadata = $v.metadata;
       _payoutId = $v.payoutId;
+      _lastSeenAt = $v.lastSeenAt;
+      _claimExpiresAt = $v.claimExpiresAt;
       _completedAt = $v.completedAt;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
@@ -314,6 +337,8 @@ class PaymentGetDataBuilder
           referenceId: referenceId,
           metadata: metadata,
           payoutId: payoutId,
+          lastSeenAt: lastSeenAt,
+          claimExpiresAt: claimExpiresAt,
           completedAt: completedAt,
           createdAt: BuiltValueNullFieldError.checkNotNull(
               createdAt, r'PaymentGetData', 'createdAt'),

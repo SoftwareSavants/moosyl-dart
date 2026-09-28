@@ -12,7 +12,7 @@ class _$CheckoutSessionCreateBody extends CheckoutSessionCreateBody {
   @override
   final String? transactionId;
   @override
-  final PaymentRequestCreateAmount? amount;
+  final GetProductsPageParameter? amount;
   @override
   final String? phoneNumber;
   @override
@@ -100,10 +100,10 @@ class CheckoutSessionCreateBodyBuilder
   set transactionId(String? transactionId) =>
       _$this._transactionId = transactionId;
 
-  PaymentRequestCreateAmountBuilder? _amount;
-  PaymentRequestCreateAmountBuilder get amount =>
-      _$this._amount ??= PaymentRequestCreateAmountBuilder();
-  set amount(PaymentRequestCreateAmountBuilder? amount) =>
+  GetProductsPageParameterBuilder? _amount;
+  GetProductsPageParameterBuilder get amount =>
+      _$this._amount ??= GetProductsPageParameterBuilder();
+  set amount(GetProductsPageParameterBuilder? amount) =>
       _$this._amount = amount;
 
   String? _phoneNumber;

@@ -20,6 +20,10 @@ class _$PostCheckoutSessionPublicByIdPay200Response
   final String? provider;
   @override
   final JsonObject? formData;
+  @override
+  final String? paymentId;
+  @override
+  final GimtelInstructions? instructions;
 
   factory _$PostCheckoutSessionPublicByIdPay200Response(
           [void Function(PostCheckoutSessionPublicByIdPay200ResponseBuilder)?
@@ -33,7 +37,9 @@ class _$PostCheckoutSessionPublicByIdPay200Response
       this.paymentCode,
       this.successUrl,
       this.provider,
-      this.formData})
+      this.formData,
+      this.paymentId,
+      this.instructions})
       : super._();
   @override
   PostCheckoutSessionPublicByIdPay200Response rebuild(
@@ -54,7 +60,9 @@ class _$PostCheckoutSessionPublicByIdPay200Response
         paymentCode == other.paymentCode &&
         successUrl == other.successUrl &&
         provider == other.provider &&
-        formData == other.formData;
+        formData == other.formData &&
+        paymentId == other.paymentId &&
+        instructions == other.instructions;
   }
 
   @override
@@ -66,6 +74,8 @@ class _$PostCheckoutSessionPublicByIdPay200Response
     _$hash = $jc(_$hash, successUrl.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, formData.hashCode);
+    _$hash = $jc(_$hash, paymentId.hashCode);
+    _$hash = $jc(_$hash, instructions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -79,7 +89,9 @@ class _$PostCheckoutSessionPublicByIdPay200Response
           ..add('paymentCode', paymentCode)
           ..add('successUrl', successUrl)
           ..add('provider', provider)
-          ..add('formData', formData))
+          ..add('formData', formData)
+          ..add('paymentId', paymentId)
+          ..add('instructions', instructions))
         .toString();
   }
 }
@@ -114,6 +126,16 @@ class PostCheckoutSessionPublicByIdPay200ResponseBuilder
   JsonObject? get formData => _$this._formData;
   set formData(JsonObject? formData) => _$this._formData = formData;
 
+  String? _paymentId;
+  String? get paymentId => _$this._paymentId;
+  set paymentId(String? paymentId) => _$this._paymentId = paymentId;
+
+  GimtelInstructionsBuilder? _instructions;
+  GimtelInstructionsBuilder get instructions =>
+      _$this._instructions ??= GimtelInstructionsBuilder();
+  set instructions(GimtelInstructionsBuilder? instructions) =>
+      _$this._instructions = instructions;
+
   PostCheckoutSessionPublicByIdPay200ResponseBuilder() {
     PostCheckoutSessionPublicByIdPay200Response._defaults(this);
   }
@@ -127,6 +149,8 @@ class PostCheckoutSessionPublicByIdPay200ResponseBuilder
       _successUrl = $v.successUrl;
       _provider = $v.provider;
       _formData = $v.formData;
+      _paymentId = $v.paymentId;
+      _instructions = $v.instructions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -148,16 +172,33 @@ class PostCheckoutSessionPublicByIdPay200ResponseBuilder
   PostCheckoutSessionPublicByIdPay200Response build() => _build();
 
   _$PostCheckoutSessionPublicByIdPay200Response _build() {
-    final _$result = _$v ??
-        _$PostCheckoutSessionPublicByIdPay200Response._(
-          status: BuiltValueNullFieldError.checkNotNull(
-              status, r'PostCheckoutSessionPublicByIdPay200Response', 'status'),
-          referenceId: referenceId,
-          paymentCode: paymentCode,
-          successUrl: successUrl,
-          provider: provider,
-          formData: formData,
-        );
+    _$PostCheckoutSessionPublicByIdPay200Response _$result;
+    try {
+      _$result = _$v ??
+          _$PostCheckoutSessionPublicByIdPay200Response._(
+            status: BuiltValueNullFieldError.checkNotNull(status,
+                r'PostCheckoutSessionPublicByIdPay200Response', 'status'),
+            referenceId: referenceId,
+            paymentCode: paymentCode,
+            successUrl: successUrl,
+            provider: provider,
+            formData: formData,
+            paymentId: paymentId,
+            instructions: _instructions?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'instructions';
+        _instructions?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'PostCheckoutSessionPublicByIdPay200Response',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

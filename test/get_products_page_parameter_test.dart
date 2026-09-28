@@ -1,11 +1,11 @@
 import 'package:test/test.dart';
 import 'package:moosyl/moosyl.dart';
 
-// tests for PaymentRequestCreateAmount
+// tests for GetProductsPageParameter
 void main() {
-  final instance = PaymentRequestCreateAmountBuilder();
+  final instance = GetProductsPageParameterBuilder();
   // TODO add properties to the builder and call build()
 
-  group(PaymentRequestCreateAmount, () {
+  group(GetProductsPageParameter, () {
   });
 }
